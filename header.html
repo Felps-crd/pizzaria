@@ -1,0 +1,99 @@
+<?php
+    session_start();
+    //print_r($_SESSION);
+    if((!isset($_SESSION['user']) == true) and (!isset($_SESSION['senha']) ==true))
+    {
+        unset($_SESSION['user']);
+        unset( $_SESSION['senha']);
+        header('Location: login-cliente.php');
+    }
+    $logado = $_SESSION['user'];
+?>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./styles/output.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    
+    <style>
+        .bg-home {
+    background-image: url('bg.png');
+    
+    }
+    .bg-blue-500 {
+    --tw-bg-opacity: 1;
+    background-color: rgb(59 130 246 / var(--tw-bg-opacity)) /* #3b82f6 */;
+}
+.hover\:bg-blue-700:hover {
+    --tw-bg-opacity: 1;
+    background-color: rgb(29 78 216 / var(--tw-bg-opacity)) /* #1d4ed8 */;
+}
+.px-4 {
+    padding-left: 1rem /* 16px */;
+    padding-right: 1rem /* 16px */;
+}
+.py-2 {
+    padding-top: 0.5rem /* 8px */;
+    padding-bottom: 0.5rem /* 8px */;
+}
+.sair:hover{
+    background-color: #e8e8e8;
+    color: black;
+    
+}
+.nav{
+    background: #ffffff;
+    color: #000;
+}
+.sair{
+    margin-top: 1rem
+    
+}
+.mt-4 {
+    margin-top: 1rem /* 16px */;
+}
+.back{
+    background-image: url('bg.png');
+}
+    </style>
+    
+</head>
+<body>
+    
+    <!--HEADER-->
+    <header class="w-full h-[420px] bg-zinc-900 back bg-cover bg-center">
+        <div class="w-full h-full flex flex-col justify-center items-center">
+            <img 
+                src="logo.png"
+                alt="Logo Pizzaria" 
+                class="w-32 h-32 rounded-full shadow-lg hover:scale-110 duration-200"
+            />
+            <h1 class="text-3xl mt-4 mb-2 font-bold text-white">Maxfervipe Pizzaria</h1>
+
+            <span class="text-white font-medium">Rua arco iris, 24, jardim do vale</span>
+
+            <div class="bg-green-600 px-4 py-1 rounded-lg mt-5" id="date-span">
+                <span class="text-white font-medium">Seg a Dom - 18:00 as 23:00</span>
+            </div>
+<h2></h2>
+
+        <div>
+            <!--<button class="sair bg-red-500 mt-4 text-white font-bold py-1 px-4 rounded">-->
+            <a href="sair.php" class="sair bg-red-500 mt-5 text-white font-bold px-4 rounded">Finalizar sessão</a>
+            <a href="cardapio_atualizado.php" class="sair bg-green-600 mt-5 text-white font-bold px-4 rounded">Cardapio</a>
+            <a href="pedidos-cliente.php" class="sair bg-green-600 mt-5 text-white font-bold px-4 rounded">Meus pedidos</a>
+            <!--</button>-->
+        </div>
+            
+
+        </div>
+    </header>
+    <!--FIM DO HEADER-->
+
+</body>
+</html>
